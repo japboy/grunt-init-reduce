@@ -1,0 +1,55 @@
+@import 'nib'
+
+
+// Colours
+bgColor = rgb(0,0,0)
+bgDarkGrey = rgb(35,38,40)
+bgPink = rgb(255,142,182)
+bgDarkBlue = rgb(16,23,28)
+fgColor = rgb(255,255,255)
+fgWhite = rgb(237,236,231)
+fgGrey = rgb(148,148,148)
+fgGreen = rgb(85,187,0)
+
+// Base `z-index`
+zIndexBase = 0
+zIndexBackground = zIndexBase + 100
+zIndexForeground = zIndexBase + 600
+
+// Units
+introHeight = 1755px
+fixedWidth = 780px
+relativeWidth = 100%
+
+// Reset
+h1,
+h2
+  margin: 0
+  padding: 0
+
+p
+  margin: 0
+  padding: 0
+
+ul,
+li
+  margin: 0
+  padding: 0
+
+dl,
+dt,
+dd
+  margin: 0
+  padding: 0
+
+// Anchors
+a:link,
+a:visited
+  color: fgGreen
+
+// Components
+.sprite
+  -sprite-selector-for-group: MySprite
+  background-attachment: scroll
+  background-color: transparent
+  background-repeat: no-repeat

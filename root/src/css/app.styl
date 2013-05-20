@@ -1,0 +1,77 @@
+@import 'nib'
+
+@import './vendor/normalize-2.1.0.css'
+
+@import '_mixin'
+@import '_component'
+@import '_animation'
+
+
+// Layout
+
+body
+  background-color: bgColor
+  color: fgColor
+
+header
+  margin-top: -15px
+  position: absolute
+  text-align: center
+  top: 50%
+  width: 100%
+  z-index: zIndexBase + 2
+
+  h1
+    color: bgColor
+    text-stroke: 1px fgColor
+
+#main
+  background-attachment: scroll
+  background-color: bgColor
+  background-image: url("http://lorempixel.com/1280/1280/")
+  background-position: 50% 50%
+  background-repeat: no-repeat
+  background-size: cover
+  height: 800px
+  left: 0
+  margin-top: -(800px / 2)px
+  position: absolute
+  top: 50%
+  width: 100%
+  z-index: zIndexBase + 1
+
+#sns
+  position: absolute
+  right: 10px
+  top: 10px
+
+#sns > *
+  display: inline-block
+
+footer > address
+  bottom: 0
+  left: 0
+  position: fixed
+  text-align: center
+  width: 100%
+  z-index: zIndexBase + 2
+
+#loader
+  background-attachment: scroll
+  background-color: bgColor
+  background-image: url("../img/ajax-loader.gif")
+  background-position: 50% 50%
+  background-repeat: no-repeat
+  height: 100%
+  left: 0
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: zIndexBase + 3
+
+#loader > p
+  margin-top: 24px
+  position: absolute
+  text-align: center
+  top: 50%
+  width: 100%

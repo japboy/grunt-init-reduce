@@ -1,0 +1,32 @@
+{
+  "title": "Web Front End Skeleton With Grunt",
+  "author": "Yu I.",
+  "description": "This skeleton aims to bootstrap my web front end projects.",
+  "url": "http://git.io/yui",
+  "keywords": [
+    "key1",
+    "key2",
+    "key3"
+  ],
+  "robots": [
+    "INDEX",
+    "FOLLOW",
+    "NOODP",
+    "NOYDIR",
+    "NOARCHIVE"
+  ],
+  "facebook": {
+    "admins": [
+      "662726183"
+    ],
+    "locale": "ja_JP",
+    "locale_alternate": "en_GB",
+    "image": "http://placehold.it/1500x1500",
+    "image_width": "1500",
+    "image_height": "1500"
+  },
+  "twitter": {
+    "creator": "@japboy",
+    "creator_id": "16665319"
+  }
+}

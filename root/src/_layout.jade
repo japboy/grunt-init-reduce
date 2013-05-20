@@ -1,0 +1,28 @@
+!!! 5
+html.no-js(xmlns:og='http://ogp.me/ns#', xmlns:fb='https://www.facebook.com/2008/fbml')
+  head
+    meta(charset='UTF-8')
+
+    block title
+
+    block meta
+      meta(name='viewport', content='width=device-width')
+      meta(name='author', content=author)
+      meta(name='description', content=description)
+      meta(name='keywords', content=keywords)
+      meta(name='robots', content=robots)
+      include _inc_meta_facebook
+      include _inc_meta_twitter
+
+    block style
+      link(rel='stylesheet', href='./css/app.css')
+
+    block script
+      script(src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js', charset='UTF-8')
+      script(src='./js/vendor/jquery-1.9.1.js', charset='UTF-8')
+      script(src='./js/vendor/lodash-1.2.0.js', charset='UTF-8')
+      script(src='./js/vendor/backbone-1.0.0.js', charset='UTF-8')
+      script(src='./js/modules.js', charset='UTF-8')
+
+  body
+    block body

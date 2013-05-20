@@ -1,0 +1,44 @@
+@import 'nib'
+
+
+// Animation definitions
+
+@keyframes fadeOut
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+@keyframes pullDown
+  0%
+    opacity: 0
+    transform: translate3d(0, 50px, 0)
+  100%
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+
+@keyframes expanded
+  0%
+    transform: scale(1)
+  60%
+    transform: scale(1.6)
+  80%
+    transform: scale(0.8)
+  100%
+    transform: scale(1)
+
+@keyframes blink
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+
+// Set animations
+.cssanimations
+
+  #loader.animating
+    animation: fadeOut 1s
+
+  #loader > p
+    animation: blink 0.1s infinite
