@@ -7,8 +7,6 @@ block append script
   script(src='./js/index.js', charset='UTF-8')
 
 block body
-  include _inc_embed_facebook_sdk
-
   header
     h1= title
 
@@ -17,9 +15,7 @@ block body
 
   footer
     section#sns
-      include _inc_embed_twitter_button
-      include _inc_embed_facebook_like
-      include _inc_embed_line_send
+      include _inc_sns_buttons
 
     address
       | Distributed under the 
