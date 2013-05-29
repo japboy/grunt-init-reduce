@@ -1,11 +1,11 @@
 # jQuery extensions
 
 # Internal functions
-handleSetTimeout = (callback) ->
+handleSetTimeout = (callback, millisec) ->
   id = setTimeout =>
     clearTimeout id
     callback.apply @
-  , 200
+  , millisec
 
 
 # Extend jQuery functions
@@ -65,9 +65,9 @@ $.fn.extend
 
   # Fire up `animationend` event even if UA doesn't support it
   onAnimationend: (callback) ->
-    return handleSetTimeout.call @, callback unless Modernizr.cssanimations
+    return handleSetTimeout.call @, callback, 300 unless Modernizr.cssanimations
     $(@).on 'animationend webkitAnimationEnd oanimationend MSAnimationEnd', callback
 
   oneAnimationend: (callback) ->
-    return handleSetTimeout.call @, callback unless Modernizr.cssanimations
-    $(@).on 'animationend webkitAnimationEnd oanimationend MSAnimationEnd', callback
+    return handleSetTimeout.call @, callback, 300 unless Modernizr.cssanimations
+    $(@).one 'animationend webkitAnimationEnd oanimationend MSAnimationEnd', callback
