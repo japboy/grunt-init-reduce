@@ -1,4 +1,17 @@
+# jQuery extensions
+
+# Internal functions
+handleSetTimeout = (callback) ->
+  id = setTimeout =>
+    clearTimeout id
+    callback.apply @
+  , 200
+
+
+# Extend jQuery functions
 $.extend
+
+  # Preload an array of URLs by DOM `<img>` insertion
   preloadByDOM: (items) ->
     promises = []
 
@@ -25,6 +38,8 @@ $.extend
 
     return promises
 
+
+  # Preload an array of URLs by XHR
   preloadByXHR: (items) ->
     promises = []
 
@@ -43,3 +58,16 @@ $.extend
       request item, deferred
 
     return promises
+
+
+# Extend jQuery selector methods
+$.fn.extend
+
+  # Fire up `animationend` event even if UA doesn't support it
+  onAnimationend: (callback) ->
+    return handleSetTimeout.call @, callback unless Modernizr.cssanimations
+    $(@).on 'animationend webkitAnimationEnd oanimationend MSAnimationEnd', callback
+
+  oneAnimationend: (callback) ->
+    return handleSetTimeout.call @, callback unless Modernizr.cssanimations
+    $(@).on 'animationend webkitAnimationEnd oanimationend MSAnimationEnd', callback

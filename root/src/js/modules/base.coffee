@@ -1,5 +1,10 @@
 class Model extends Backbone.Model
 
+  set: (attributes, options) =>
+    options = {} unless options
+    options.validate = true
+    super attributes, options
+
 
 class Collection extends Backbone.Collection
 

@@ -18,8 +18,7 @@ $ ->
   console.log Base.VERSION
   console.log 'Hello, index.'
 
-  $('#loader').on 'animationend webkitAnimationEnd oanimationend MSAnimationEnd', ->
-    $(@).remove()
+  $('#loader').oneAnimationend -> $(@).remove()
 
   $.when.apply(@, promises)
     .progress(handleProgress)
