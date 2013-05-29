@@ -29,8 +29,8 @@ exports.template = (grunt, init, done) ->
     props.peerDependencies = {}
 
     props.devDependencies =
-      # grunt@0.4.0
-      'grunt': '>=0.4.0'
+      # grunt@0.4.1
+      'grunt': '>=0.4.1'
 
       # Official plugins for grunt@0.4.0
       'grunt-contrib-clean': '>=0.4.0'
@@ -69,6 +69,7 @@ exports.template = (grunt, init, done) ->
       'grunt-jsonlint': '>=1.0.0'
       #'grunt-markdown': '>=0.2.0'
       #'grunt-mocha': '>0.2'
+      'grunt-notify': '>=0.2.3'
       'grunt-reduce': 'git://github.com/japboy/grunt-reduce.git'
       #'grunt-simple-mocha': '>=0.4.0'
       #'grunt-styleguide': '>=0.2.4'

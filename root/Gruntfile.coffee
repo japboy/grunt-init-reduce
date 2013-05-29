@@ -136,6 +136,7 @@ module.exports = (grunt) ->
         src: [
           '**/*'
           '!**/*.coffee'
+          '!**/*.hbs'
           '!**/*.jade'
           '!**/*.jst'
           '!**/*.less'
@@ -154,7 +155,8 @@ module.exports = (grunt) ->
     jade:
       options:
         pretty: true
-        data: grunt.file.readJSON './src/meta.json'
+        data: ->
+          return grunt.file.readJSON './src/meta.json'
       source:
         expand: true
         cwd: '<%= path.source %>'
@@ -176,6 +178,7 @@ module.exports = (grunt) ->
         src: [
           '**/*.js'
           '!vendor/**/*.js'
+          '!socials.js'
         ]
 
     #
@@ -189,6 +192,21 @@ module.exports = (grunt) ->
           '<%= path.source %>/**/*.json'
           'package.json'
         ]
+
+    #
+    # Task to notify messages
+    #
+    # * [grunt-notify](https://github.com/dylang/grunt-notify)
+    #
+    notify:
+      build:
+        options:
+          title: 'Build completed'
+          message: 'Successfully finished.'
+      watch:
+        options:
+          title: 'Watch started'
+          message: 'Local server launched: http://localhost:50000/'
 
     #
     # Task to optimise HTML/CSS/JavaScript & images by AssetGraph Builder
@@ -259,6 +277,7 @@ module.exports = (grunt) ->
     watcher: [
       'connect'
       'watch'
+      'notify:watch'
     ]
     default: [
       'css'
@@ -267,6 +286,7 @@ module.exports = (grunt) ->
       'json'
       'copy:source'
       'reduce'
+      'notify:build'
     ]
 
 
@@ -282,6 +302,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-coffeelint'
   grunt.loadNpmTasks 'grunt-jsonlint'
+  grunt.loadNpmTasks 'grunt-notify'
   grunt.loadNpmTasks 'grunt-reduce'
 
   # Load initial configuration being set up above
