@@ -1,13 +1,5 @@
 # Base classes for Backbone.js
 
-fetch = (options) ->
-  options = {} unless options
-  options.crossDomain = true
-  options.dataType = 'jsonp'
-  options.jsonp = 'jsonp'
-  super options
-
-
 class Model extends Backbone.Model
 
   set: (attributes, options) =>
@@ -15,12 +7,22 @@ class Model extends Backbone.Model
     options.validate = true
     super attributes, options
 
-  fetch: fetch.apply @
+  fetch: (options) =>
+    options = {} unless options
+    options.crossDomain = true
+    options.dataType = 'jsonp'
+    options.jsonp = 'jsonp'
+    super options
 
 
 class Collection extends Backbone.Collection
 
-  fetch: fetch.apply @
+  fetch: (options) =>
+    options = {} unless options
+    options.crossDomain = true
+    options.dataType = 'jsonp'
+    options.jsonp = 'jsonp'
+    super options
 
 
 class View extends Backbone.View
