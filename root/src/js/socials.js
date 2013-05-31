@@ -45,13 +45,14 @@
  *
  */
 
-(function(w, d, s) {
-  function go(){
-    var js, fjs = d.getElementsByTagName(s)[0], load = function(url, id) {
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.src = url; js.id = id;
-    fjs.parentNode.insertBefore(js, fjs);
-  };
+(function (w, d, s) {
+  function go() {
+    var js, fjs = d.getElementsByTagName(s)[0],
+    load = function (url, id) {
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.src = url; js.id = id;
+      fjs.parentNode.insertBefore(js, fjs);
+    };
 
     // Facebook
     w.fbAsyncInit = function() {
@@ -69,7 +70,7 @@
     // Google +1
     w.___gcfg = {lang: 'ja'};
 
-    load('//connect.facebook.net/ja_JP/all.js#xfbml=1', 'fbjssdk');
+    load('//connect.facebook.net/ja_JP/all.js', 'fbjssdk');
     load('https://apis.google.com/js/plusone.js', 'gplus1js');
     //load('//media.line.naver.jp/js/line-button.js?v=20130508', 'linejs')
     load('//static.mixi.jp/js/plugins.js#lang=ja', 'mixipjs')
@@ -78,4 +79,4 @@
   }
   if (w.addEventListener) { w.addEventListener("load", go, false); }
   else if (w.attachEvent) { w.attachEvent("onload",go); }
-}(window, document, 'script'));
+})(window, document, 'script');
