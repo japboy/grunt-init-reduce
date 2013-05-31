@@ -221,7 +221,7 @@ module.exports = (grunt) ->
       outRoot: '<%= path.publish %>'
       less: false
       manifest: false
-      pretty: true
+      pretty: false
       asyncScripts: false
       sharedBundles: true
 
